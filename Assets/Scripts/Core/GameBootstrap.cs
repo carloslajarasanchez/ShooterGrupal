@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class GameBootstrap : MonoBehaviour
 {
-    private void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
     {
         // Events
         ServiceLocator.Register(new CustomEvents());
